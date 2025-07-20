@@ -13,10 +13,7 @@ const NewCompanion = async () => {
   const canCreate = await newCompanionPermissions();
   return (
     <main className="min-lg:w-1/3 min-md:w-2/3 items-center justify-center">
-      <article className="w-full gap-4 flex flex-col">
-            <h1>Companion Builder</h1>
-            <CompanionForm />
-          </article>
+      
        {
         canCreate ? (
           <article className="w-full gap-4 flex flex-col">
@@ -31,7 +28,7 @@ const NewCompanion = async () => {
 
             </div>
             <h1>You have reached limit</h1>
-            <p>Ypu have reached your companion limit. Upgrade to create more companion and get features</p>
+            <p>You have reached your companion limit. Upgrade to create more companion and get features</p>
             <Link className='bt-primary w-full justify-center ' href="/subscription">
               Upgrade My Plan
             </Link>
