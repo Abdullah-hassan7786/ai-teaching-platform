@@ -115,65 +115,36 @@ export const getUserCompanions = async (userId: string) => {
     return data;
 }
 
-// export const newCompanionPermissions = async () => {
-//     const { userId, has } = await auth();
-//     const supabase = createSupabaseClient();
-
-//     let limit = 0;
-
-//     if(has({ plan: 'pro' })) {
-//         return true;
-//     } else if(has({ feature: "basic" })) {
-//         limit = 5;
-//     } else if(has({ feature: "core" })) {
-//         limit = 10;
-//     }
-
-//     const { data, error } = await supabase
-//         .from('companions')
-//         .select('id', { count: 'exact' })
-//         .eq('author', userId)
-
-//     if(error) throw new Error(error.message);
-
-//     const companionCount = data?.length;
-
-//     if(companionCount >= limit) {
-//         return false
-//     } else {
-//         return true;
-//     }
-// }
 export const newCompanionPermissions = async () => {
-  const { userId, has } = await auth();
-  const supabase = createSupabaseClient();
+    const { userId, has } = await auth();
+    const supabase = createSupabaseClient();
 
-  let limit = 0;
+    let limit = 0;
 
-  if (has({ plan: "pro" })) {
-    return true;
-  } else if (has({ feature: "basic" })) {
-    limit = 5;
-  } else if (has({ feature: "core" })) {
-    limit = 10;
-  } else {
-    // fallback — no known feature matched
-    return false;
-  }
+    if(has({ plan: 'pro' })) {
+        return true;
+    } else if(has({ feature: "3_active_companions" })) {
+        limit = 5;
+    } else if(has({ feature: "10_active_companion" })) {
+        limit = 10;
+    }
 
-  const { data, count, error } = await supabase
-    .from("companions")
-    .select("*", { count: "exact" })
-    .eq("author", userId);
+    const { data, error } = await supabase
+        .from('companions')
+        .select('id', { count: 'exact' })
+        .eq('author', userId)
 
-  if (error) throw new Error(error.message);
+    if(error) throw new Error(error.message);
 
-  if ((count ?? 0) >= limit) {
-    return false;
-  }
+    const companionCount = data?.length;
 
-  return true;
-};
+    if(companionCount >= limit) {
+        return false
+    } else {
+        return true;
+    }
+}
+
 
 // Bookmarks
 export const addBookmark = async (companionId: string, path: string) => {
