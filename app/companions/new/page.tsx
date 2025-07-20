@@ -2,7 +2,7 @@ import React from 'react'
 import CompanionForm from '@/components/CompanionForm'
 import { auth } from "@clerk/nextjs/server";
 import { redirect } from "next/navigation";
-//import { newCompanionPermissions } from '@/lib/actions/companion.actions';
+import { newCompanionPermissions } from '@/lib/actions/companion.actions';
 import Image from 'next/image';
 import Link from 'next/link';
 const NewCompanion = async () => {
@@ -10,14 +10,14 @@ const NewCompanion = async () => {
   if (!userId) {
     redirect('/sign-in');
   }
-  //const canCreate = await newCompanionPermissions();
+  const canCreate = await newCompanionPermissions();
   return (
     <main className="min-lg:w-1/3 min-md:w-2/3 items-center justify-center">
       <article className="w-full gap-4 flex flex-col">
             <h1>Companion Builder</h1>
             <CompanionForm />
           </article>
-      {/* {
+       {
         canCreate ? (
           <article className="w-full gap-4 flex flex-col">
             <h1>Companion Builder</h1>
@@ -36,7 +36,7 @@ const NewCompanion = async () => {
               Upgrade My Plan
             </Link>
           </article>
-      } */}
+      } 
     </main>
   )
 }
