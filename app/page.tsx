@@ -6,6 +6,7 @@ import { recentSessions } from '@/constants'
 import { getAllCompanions, getRecentSessions } from '@/lib/actions/companion.actions'
 import { CLIENT_STATIC_FILES_RUNTIME_POLYFILLS_SYMBOL } from 'next/dist/shared/lib/constants'
 import { getSubjectColor } from '@/lib/utils'
+export const dynamic = "force-dynamic";
 
 const Page = async() => {
   const companions = await getAllCompanions({limit : 3});
