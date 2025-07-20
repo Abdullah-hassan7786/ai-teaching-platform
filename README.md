@@ -2,9 +2,7 @@
 
 A modern **AI-powered SaaS LMS (Learning Management System)** built using **Next.js 14**, **TailwindCSS**, **Clerk**, **Supabase**, **Stripe**, and **Vapi**. This platform enables real-time interactive learning experiences powered by an AI voice assistant and includes user authentication, subscriptions, session history, and more.
 
-![ai-teaching-banner](https://user-images.githubusercontent.com/placeholder/banner.png) <!-- Optional: Add a banner image -->
-
----
+!
 
 ## 🚀 Features
 
@@ -69,11 +67,6 @@ A modern **AI-powered SaaS LMS (Learning Management System)** built using **Next
 
 ---
 
-## 📸 Screenshots
-
-> Add your UI screenshots here later
-
----
 
 ## 📚 Credits & Resources
 
@@ -90,6 +83,3 @@ Instructor: [JavaScript Mastery](https://github.com/adrianhajdin)
 
 ---
 
-## 📄 License
-
-This project is licensed under the MIT License. See the [LICENSE](./LICENSE) file for more details.
