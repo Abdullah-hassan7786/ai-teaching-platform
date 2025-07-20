@@ -28,7 +28,7 @@ const NewCompanion = async () => {
             </div>
             <h1>You have reached limit</h1>
             <p>Ypu have reached your companion limit. Upgrade to create more companion and get features</p>
-            <Link className='bt-primary w-full justify-center' href="/subscription">
+            <Link className='bt-primary w-full justify-center ' href="/subscription">
               Upgrade My Plan
             </Link>
           </article>
